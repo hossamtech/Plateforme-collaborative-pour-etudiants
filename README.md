@@ -27,4 +27,4 @@ Cette plateforme innovante est conçue pour améliorer l'apprentissage collabora
 
 Regardez la démonstration vidéo complète de la plateforme :
 
-[![Démonstration Vidéo](https://img.youtube.com/vi/video-thumbnail-placeholder/0.jpg)](screenschot_app/video.mp4)
+[Video](https://drive.google.com/file/d/1hC3tYGVEYkYZTbWvWguouF8BiGV-Esy6/view?usp=drive_link)
