@@ -27,4 +27,5 @@ Cette plateforme innovante est conçue pour améliorer l'apprentissage collabora
 
 Regardez la démonstration vidéo complète de la plateforme :
 
-[Video](https://drive.google.com/file/d/1hC3tYGVEYkYZTbWvWguouF8BiGV-Esy6/view?usp=drive_link)
+<iframe src="https://drive.google.com/uc?export=preview&id=1aBcD2EfGhIjKlMnoP3" width="640" height="480" allow="autoplay"></iframe>
+
