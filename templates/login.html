@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edulink">
+    <meta name="keywords" content="Edulink">
+    <meta name="author" content="Edulink">
+    <link rel="icon" href="#" type="image/x-icon" />
+    <title>edulink</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Theme css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="{% static 'assets/css/style_login.css' %}">
+
+</head>
+
+<body>
+
+    <!-- login section start -->
+    <section class="login-section">
+        <div class="header-section">
+            <div class="logo-sec">
+                <a href="index.html">
+                    <img src="{% static 'assets/images/logo-white.png' %}" .png" alt="logo"
+                        class="img-fluid blur-up lazyload">
+                </a>
+            </div>
+            <!-- <div class="right-links">
+                <ul>
+                    <li>
+                        <a href="#">
+                            about
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            upgrade
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                    <div class="login-welcome login">
+                        <div>
+                            <img src="{% static 'assets/images/login/login_1.png' %}" class="img-fluid blur-up lazyload"
+                                alt="charcter">
+                            <h1>Bienvenue à Nouveau!</h1>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7 col-md-10 col-12 m-auto">
+                    <div class="login-form" style="padding-top: 50px; padding-bottom: 50px;">
+                        <div>
+                            <div class="login-title">
+                                <h2>Connexion</h2>
+                            </div>
+                            <div class="login-discription">
+                                <h3>Bonjour à Tous, Bienvenue à Nouveau</h3>
+                                <h4>Bienvenue sur Edulink, veuillez vous connecter à votre compte.</h4>
+                            </div>
+                            <div class="form-sec">
+                                <div>
+
+                                    <form class="theme-form" action="" method="POST">
+
+                                        {% csrf_token %}
+
+                                        <div class="form-group email-field">
+                                            <label for="exampleInputEmail1">Adresse E-Mail
+                                            </label>
+                                            <div class="input-field">
+                                                <input type="email" name="email" class="form-control email"
+                                                    id="exampleInputEmail1" placeholder="Entez votre e-mail">
+                                                <i class="input-icon iw-20 ih-20" data-feather="mail"></i>
+                                            </div>
+
+                                            <span class="error email-error ">
+                                                <i class="error-icon" data-feather="alert-circle"></i>
+                                                <p class="error-text" id="email-message"></p>
+                                            </span>
+                                        </div>
+                                        <div class="form-group create-password">
+                                            <label for="exampleInputPassword1">Mot De Passe
+                                            </label>
+                                            <div class="input-field">
+                                                <input type="password" name="password" class="form-control password"
+                                                    id="exampleInputPassword1" placeholder="Entrez votre Mot de passe">
+                                                <i class="input-icon iw-20 ih-20" data-feather="eye-off"></i>
+                                                <!-- <i class="bx bx-hide input-icon "></i> -->
+                                                <!-- <iconify-icon icon="bx:hide"></iconify-icon> -->
+                                            </div>
+                                            <span class="error password-error ">
+                                                <i class="error-icon" data-feather="alert-circle"></i>
+                                                <p class="error-text" id="password-message"></p>
+                                            </span>
+                                        </div>
+                                        <!-- <i class="input-icon iw-20 ih-20" data-feather="eye-off"></i> -->
+                                </div>
+
+                                <div class="bottom-sec">
+                                    <div class="form-check checkbox_animated">
+                                        <input type="checkbox" class="form-check-input" name="remember"
+                                            id="remember-checkbox">
+                                        <label class="form-check-label" for="remember-checkbox">Souviens-Toi De
+                                            Moi</label>
+                                    </div>
+                                    <a href="#" class="ms-auto">mot de passe oublié?</a>
+                                </div>
+                                <div class="btn-section">
+                                    <button type="submit" class="btn btn-solid btn-lg">Connexion</button>
+                                    <a href="/signup" class="btn btn-solid btn-lg ms-auto">S'inscrire</a>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="how-work">
+            <div class="media">
+                <i data-feather="play-circle"></i>
+                <div class="media-body">
+                    <h2>Comment Ça Marche?</h2>
+                    <p>
+                        EduLink est un réseau social dédié aux étudiants offrant une plateforme pour accéder à des
+                        informations pertinentes pour leur scolarité et leur bien-être.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login section end -->
+
+
+    <!-- latest jquery-->
+    <script src="{% static 'assets/js/validationLogin.js' %}"></script>
+
+    <!-- feather icon js-->
+    <script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+    <script>
+        feather.replace();
+
+    </script>
+
+</body>
+
+</html>

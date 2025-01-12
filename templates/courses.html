@@ -1,0 +1,793 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
+
+    <!-- Basic Page Needs
+        ================================================== -->
+    <title>edulink | cours</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Edulink est un réseau social dédié aux étudiants offrant une plateforme pour accéder à des
+    informations pertinentes pour leur scolarité et leur bien-être.">
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+
+    <!-- CSS 
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style_all.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header>
+            <div class="header_wrap">
+                <div class="header_inner mcontainer">
+                    <div class="left_side">
+
+                        <span class="slide_menu" uk-toggle="target: #wrapper ; cls: is-collapse is-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+
+                        <div id="logo">
+                            <a href="/">
+                                <img src="{% static 'assets/images/Asset 4.png' %}" alt="">
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- search icon for mobile -->
+                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div class="header_search"><i class="uil-search-alt"></i>
+                        <input value="" type="text" class="form-control"
+                            placeholder="Recherchez des amis, des vidéos et plus encore.." autocomplete="off">
+                        <div uk-drop="mode: click" class="header_search_dropdown">
+
+                            <h4 class="search_title"> Récemment </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'assets/images/avatars/profil6.png' %}" alt=""
+                                            class="list-avatar">
+                                        <div class="list-name"> Nabil Fares </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'assets/images/avatars/petite-fille.png' %}" alt=""
+                                            class="list-avatar">
+                                        <div class="list-name"> Salma Hamdi </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'assets/images/avatars/profil6.png' %}" alt=""
+                                            class="list-avatar">
+                                        <div class="list-name"> Khalid Taha </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'assets/images/avatars/profil6.png' %}" alt=""
+                                            class="list-avatar">
+                                        <div class="list-name"> Omar Hamidi </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{% static 'assets/images/avatars/profil6.png' %}" alt=""
+                                            class="list-avatar">
+                                        <div class="list-name"> Hassan Saad </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="right_side">
+
+                        <div class="header_widgets">
+                            <!-- <a href="pages-upgrade.html" class="is_link"> Emma </a> -->
+
+                            <a uk-toggle="target: #create-chatbot-modal" href="#"
+                                class="emma-assistant bg-blue-100 is_icon " uk-tooltip="title: Emma">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" id="assembly" class=" icon icon-tabler
+                                    icon-tabler-assembly " width=" 24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z">
+                                    </path>
+                                    <path
+                                        d="M15.5 9.422c.312 .18 .503 .515 .5 .876v3.277c0 .364 -.197 .7 -.515 .877l-3 1.922a1 1 0 0 1 -.97 0l-3 -1.922a1 1 0 0 1 -.515 -.876v-3.278c0 -.364 .197 -.7 .514 -.877l3 -1.79c.311 -.174 .69 -.174 1 0l3 1.79h-.014z">
+                                    </path>
+                                </svg>
+
+                            </a>
+
+
+                            <a href="#" class="is_icon" uk-tooltip="title: Notifications">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+                                    </path>
+                                </svg>
+                                <span>4</span>
+                            </a>
+                            <div uk-drop="mode: click" class="header_dropdown">
+                                <div class="dropdown_scrollbar">
+                                    <div class="drop_headline">
+                                        <h4>Notifications </h4>
+                                        <div class="btn_action">
+                                            <a href="#" data-tippy-placement="left" title="Notifications">
+                                                <ion-icon name="settings-outline"></ion-icon>
+                                            </a>
+                                            <a href="#" data-tippy-placement="left" title="Mark as read all">
+                                                <ion-icon name="checkbox-outline"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="drop_avatar">
+                                                    <img src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                                </div>
+
+                                                <div class="drop_text">
+                                                    <p>
+                                                        <strong>Khalid Taha
+                                                        </strong> aime votre commentaire sur la vidéo
+                                                        <span class="text-link">programmation orientée objet</span>
+                                                    </p>
+                                                    <time> il ya 2 heures </time>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="not-read">
+                                            <a href="#">
+                                                <div class="drop_avatar status-online"> <img
+                                                        src="{% static 'assets/images/avatars/petite-fille.png' %}"
+                                                        alt="">
+                                                </div>
+                                                <div class="drop_text">
+                                                    <p>
+                                                        <strong>Salma Hamdi</strong> a ajouté une nouvelle critique dans
+                                                        la vidéo
+                                                        <span class="text-link">UML</span>
+                                                    </p>
+                                                    <time> il ya 9 heures </time>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="drop_avatar"> <img
+                                                        src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                                </div>
+
+                                                <div class="drop_text">
+                                                    <p>
+                                                        <strong>Nabil Fares
+                                                        </strong> a partagé votre dicussion sur
+                                                        <span class="text-link">Le système d'exploitation</span>
+                                                    </p>
+                                                    <time> il ya 12 heures </time>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="drop_avatar"> <img
+                                                        src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                                </div>
+                                                <div class="drop_text">
+                                                    <p>
+                                                        <strong>Omar Hamidi
+                                                        </strong> aime votre commentaire sur
+                                                        votre réponse
+                                                    </p>
+                                                    <time> Hier </time>
+                                                </div>
+                                            </a>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <a href="#" class="is_icon" uk-tooltip="title: Messages">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>4</span>
+                            </a>
+                            <div uk-drop="mode: click" class="header_dropdown is_message">
+                                <div class="dropdown_scrollbar">
+                                    <div class="drop_headline">
+                                        <h4>Messages </h4>
+
+                                    </div>
+                                    <input type="text" class="uk-input" placeholder="Rechercher sur les messages">
+                                    <ul>
+                                        <li class="un-read">
+                                            <a href="#">
+                                                <div class="drop_avatar"> <img
+                                                        src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                                </div>
+                                                <div class="drop_text">
+                                                    <strong> Omar Hamidi </strong> <time>12:43 PM</time>
+                                                    <p> Pouvez-vous résoudre cet exercice.. </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="drop_avatar"> <img
+                                                        src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                                </div>
+                                                <div class="drop_text">
+                                                    <strong> Hassan Saad
+                                                    </strong> <time> 6:43 PM</time>
+                                                    <p> Merci pour votre réponse.. </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="drop_avatar"> <img
+                                                        src="{% static 'assets/images/avatars/petite-fille.png' %}"
+                                                        alt="">
+                                                </div>
+                                                <div class="drop_text">
+                                                    <strong>Salma Hamdi </strong> <time> Wed </time>
+                                                    <p> Salma vient de rejoindre Messenger! </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="see-all"> Voir tout dans Messages</a>
+                            </div>
+
+
+                            <a href="#">
+                                <img src="{% static 'assets/images/avatars/profil6.png' %}" class="is_avatar" alt="">
+                            </a>
+                            <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                                <a href="/profile" class="user">
+                                    <div class="user_avatar">
+                                        <img src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                                    </div>
+                                    <div class="user_name">
+                                        <div> Hossam Chokri </div>
+                                        <span> @hossaam</span>
+                                    </div>
+                                </a>
+                                <hr>
+
+                                <hr>
+                                <a href="page-setting.html">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    Mon compte
+                                </a>
+
+
+
+                                <a href="form-login.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                        </path>
+                                    </svg>
+                                    Se déconnecter
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- sidebar -->
+        <div class="sidebar  bg-white shadow">
+
+            <div class="sidebar_inner" data-simplebar>
+
+                <ul>
+                    <li class="active"><a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-blue-600">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                            </svg>
+                            <span> Accueil </span> </a>
+                    </li>
+
+
+                    <li><a href="/groupes">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-blue-500">
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                            </svg><span> Groupes </span></a>
+                    </li>
+
+                    <li><a href="/cours">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-indigo-500">
+                                <path
+                                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                            </svg>
+                            <span> Cours</span></a>
+                    </li>
+
+
+                    <li><a href="/evenements">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-yellow-500">
+                                <path fill-rule="evenodd"
+                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                    clip-rule="evenodd" />
+                            </svg><span> Evénements </span></a>
+                    </li>
+
+
+                    <li><a href="/actualites">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-pink-500">
+                                <path fill-rule="evenodd"
+                                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                                    clip-rule="evenodd" />
+                                <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+                            </svg>
+                            <span> Actualité</span></a>
+                    </li>
+
+                    <li><a href="/chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="text-blue-500">
+                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z">
+                                </path>
+                                <path
+                                    d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z">
+                                </path>
+                            </svg>
+                            <span> Chats</span></a>
+
+                    </li>
+
+
+                </ul>
+
+
+
+                <h3 class="side-title"> Contacts </h3>
+
+                <div class="contact-list my-2 ml-1">
+
+                    <a href="chats-friend.html">
+                        <div class="contact-avatar">
+                            <img src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                            <span class="user_status status_online"></span>
+                        </div>
+                        <div class="contact-username"> Omar Hamidi
+                        </div>
+                    </a>
+                    <a href="chats-friend.html">
+                        <div class="contact-avatar">
+                            <img src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                            <span class="user_status"></span>
+                        </div>
+                        <div class="contact-username"> Hassan Saad
+                        </div>
+                    </a>
+                    <a href="chats-friend.html">
+                        <div class="contact-avatar">
+                            <img src="{% static 'assets/images/avatars/petite-fille.png' %}" alt="">
+                        </div>
+                        <div class="contact-username">Salma Hamdi</div>
+                    </a>
+                    <a href="chats-friend.html">
+                        <div class="contact-avatar">
+                            <img src="{% static 'assets/images/avatars/profil6.png' %}" alt="">
+                        </div>
+                        <div class="contact-username"> Nabil Fares
+                        </div>
+                    </a>
+
+                </div>
+
+                <ul class="side_links" data-sub-title="Pages">
+                    <li><a href="#"> <ion-icon name="document-outline" class="side-icon"></ion-icon> <span> Créer du
+                                contenu </span> </a>
+
+                    </li>
+                    <li><a href="#"> <ion-icon name="albums-outline" class="side-icon"></ion-icon> <span> Pages
+                                d'informations
+                            </span> </a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+            <!-- sidebar overly for mobile -->
+            <div class="side_overly" uk-toggle="target: #wrapper ; cls: is-collapse is-active"></div>
+
+        </div>
+
+
+        <!-- Main Contents -->
+        <div class="main_content">
+            <div class="mcontainer">
+
+                <div class="flex justify-between relative md:mb-4 mb-3">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-semibold"> Les Cours </h2>
+                        <nav class="responsive-nav border-b md:m-0 -mx-4">
+                            <ul>
+                                <li class="active"><a href="#" class="lg:px-2"> Suggestions </a></li>
+                                <li><a href="#" class="lg:px-2"> Le plus récent </a></li>
+                                <li><a href="#" class="lg:px-2"> Regarder plus tard </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <a href="#"
+                        class="flex items-center justify-center h-9 lg:px-5 px-2 rounded-md bg-blue-600 text-white space-x-1.5 absolute right-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="md:block hidden"> Créer </span>
+                    </a>
+                </div>
+
+                <div class="relative" uk-slider="finite: true">
+
+                    <div class="uk-slider-container px-1 py-3">
+                        <ul
+                            class="uk-slider-items uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2 uk-grid-small uk-grid">
+                            <li>
+                                <div>
+                                    <a href="/coursUML"
+                                        class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                        <img src="{% static 'assets/images/courses/maxresdefault (3).jpg' %}" alt=""
+                                            class="w-full h-full absolute inset-0 object-cover">
+                                        <span
+                                            class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">
+                                            12:21</span>
+                                        <img src="{% static 'assets/images/icon-play.svg' %}"
+                                            class="w-12 h-12 uk-position-center" alt="">
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="/coursUML" class="font-semibold line-clamp-2"> Analyse et
+                                            Conception Orientée Objet (UML) </a>
+                                        <div class="pt-2">
+                                            <a href="#" class="text-sm font-medium"> Karim Mansouri </a>
+                                            <div class="flex space-x-2 items-center text-sm">
+                                                <div> Niveau avancé </div>
+                                                <div class="md:block hidden">·</div>
+                                                <div> 10K Views </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="/coursUML"
+                                        class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                        <img src="{% static 'assets/images/courses/maxresdefault (1).jpg' %}" alt=""
+                                            class="w-full h-full absolute inset-0 object-cover">
+                                        <span
+                                            class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">
+                                            12:21</span>
+                                        <img src="{% static 'assets/images/icon-play.svg' %}"
+                                            class="w-12 h-12 uk-position-center" alt="">
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="/coursUML" class="font-semibold line-clamp-2"> Réseaux et
+                                            systèmes de télécommunications </a>
+                                        <div class="pt-2">
+                                            <a href="#" class="text-sm font-medium"> Mohammed Rahimi </a>
+                                            <div class="flex space-x-2 items-center text-sm">
+                                                <div> Niveau avancé </div>
+                                                <div class="md:block hidden">·</div>
+                                                <div> 10K Views</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="/coursUML"
+                                        class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                        <img src="{% static 'assets/images/courses/programmation-orientee-objet.webp' %}"
+                                            alt="" class="w-full h-full absolute inset-0 object-cover">
+                                        <span
+                                            class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">
+                                            12:21</span>
+                                        <img src="{% static 'assets/images/icon-play.svg' %}"
+                                            class="w-12 h-12 uk-position-center" alt="">
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="/coursUML" class="font-semibold line-clamp-2"> Notions de
+                                            classe et d’objet en programmation orientée objet </a>
+                                        <div class="pt-2">
+                                            <a href="#" class="text-sm font-medium"> Adnane Rabi</a>
+                                            <div class="flex space-x-2 items-center text-sm">
+                                                <div> Niveau Debutant</div>
+                                                <div class="md:block hidden">·</div>
+                                                <div> 10K Views</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div>
+                                    <a href="/coursUML"
+                                        class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                        <img src="{% static 'assets/images/courses/structure.jpeg' %}" alt=""
+                                            class="w-full h-full absolute inset-0 object-cover">
+                                        <span
+                                            class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">
+                                            12:21</span>
+                                        <img src="{% static 'assets/images/icon-play.svg' %}"
+                                            class="w-12 h-12 uk-position-center" alt="">
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="/coursUML" class="font-semibold line-clamp-2">Comprendre
+                                            l'intérêt du prétraitement de données </a>
+                                        <div class="pt-2">
+                                            <a href="#" class="text-sm font-medium"> Walid Cherif </a>
+                                            <div class="flex space-x-2 items-center text-sm">
+                                                <div> Niveau Debutant </div>
+                                                <div class="md:block hidden">·</div>
+                                                <div> 10K Views</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="/coursUML"
+                                        class="w-full md:h-36 h-28 overflow-hidden rounded-lg relative inline-block">
+                                        <img src="{% static 'assets/images/courses/img-5.jpg' %}" alt=""
+                                            class="w-full h-full absolute inset-0 object-cover">
+                                        <span
+                                            class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs">
+                                            12:21</span>
+                                        <img src="{% static 'assets/images/icon-play.svg' %}"
+                                            class="w-12 h-12 uk-position-center" alt="">
+                                    </a>
+                                    <div class="pt-3">
+                                        <a href="/coursUML" class="font-semibold line-clamp-2">Architecture des
+                                            ordinateurs & Programmation Assembleur</a>
+                                        <div class="pt-2">
+                                            <a href="#" class="text-sm font-medium"> Abdelwahab Naji </a>
+                                            <div class="flex space-x-2 items-center text-sm">
+                                                <div> Niveau avancé </div>
+                                                <div class="md:block hidden">·</div>
+                                                <div> 19.9K Views</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a class="absolute bg-white top-16 flex items-center justify-center p-2 -left-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white"
+                            href="#" uk-slider-item="previous"> <i class="icon-feather-chevron-left"></i></a>
+                        <a class="absolute bg-white top-16 flex items-center justify-center p-2 -right-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white"
+                            href="#" uk-slider-item="next"> <i class="icon-feather-chevron-right"></i></a>
+
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="md:mb-4 mb-3">
+                    <h2 class="text-2xl font-semibold"> Vos vedios </h2>
+
+                </div>
+
+                <!--  videos  -->
+
+                <div class="divide-y card px-4">
+
+                    <div class="flex md:space-x-6 space-x-4 md:py-5 py-3 relative">
+                        <a href="/coursUML"
+                            class="md:w-64 md:h-40 w-36 h-24 overflow-hidden rounded-lg relative shadow-sm">
+                            <img src="{% static 'assets/images/courses/OS3.jpg' %}" alt=""
+                                class="w-full h-full absolute inset-0 object-cover">
+                            <div
+                                class="absolute bg-yellow-100 font-semibold px-2.5 py-1 rounded-full text-yellow-500 text-xs top-2.5 left-2.5">
+                                Systéme d'exploitation
+                            </div>
+                            <img src="{% static 'assets/images/icon-play.svg' %}" class="w-12 h-12 uk-position-center"
+                                alt="">
+                        </a>
+                        <div class="flex-1 space-y-2">
+
+                            <a href="/coursUML" class="md:text-xl font-semibold line-clamp-2"> Cours de systéme
+                                d'exploitation 2 :La synchronisation des processus </a>
+                            <p class="leading-6 pr-4 line-clamp-2 md:block hidden"> Cette vidéo aborde la
+                                synchronisation des processus dans les systèmes d'exploitation. Elle explore les
+                                méthodes permettant de coordonner l'exécution des processus .. </p>
+                            <a href="#" class="font-semibold block text-sm"> Hossam Chokri</a>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3 items-center text-sm md:pt-3 font-medium">
+                                    <div> <i class="icon-feather-sliders mr-2"></i> Niveau avancé </div>
+                                    <div class="md:block hidden">·</div>
+                                    <div> <i class="icon-feather-users mr-2"></i> 120 Views</div>
+                                </div>
+                                <a href="#"
+                                    class="md:flex items-center justify-center h-9 px-8 rounded-md border hidden bg-gray-100">
+                                    Ouvrir </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex md:space-x-6 space-x-4 md:py-5 py-3 relative">
+                        <a href="/coursUML"
+                            class="md:w-64 md:h-40 w-36 h-24 overflow-hidden rounded-lg relative shadow-sm">
+                            <img src="{% static 'assets/images/courses/illu_wordclouds_blog-66.webp' %}" alt=""
+                                class="w-full h-full absolute inset-0 object-cover">
+                            <div
+                                class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                Python
+                            </div>
+                            <img src="{% static 'assets/images/icon-play.svg' %}" class="w-12 h-12 uk-position-center"
+                                alt="">
+                        </a>
+                        <div class="flex-1 space-y-2">
+
+                            <a href="/coursUML" class="md:text-xl font-semibold line-clamp-2"> Python
+                                Programmation - Cours complet et exercices corrigés en vidéo </a>
+                            <p class="leading-6 pr-4 line-clamp-2 md:block hidden">
+                                Cette vidéo est un cours complet de programmation en Python, accompagné d'exercices
+                                corrigés. Elle couvre différents aspects de la programmation Python . </p>
+                            <a href="#" class="font-semibold block text-sm"> Hossam Chokri</a>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3 items-center text-sm md:pt-3 font-medium">
+                                    <div> <i class="icon-feather-sliders mr-2"></i> Niveau Debutant </div>
+                                    <div class="md:block hidden">·</div>
+                                    <div> <i class="icon-feather-users mr-2"></i> 573 Views</div>
+                                </div>
+                                <a href="#"
+                                    class="md:flex items-center justify-center h-9 px-8 rounded-md border hidden bg-gray-100">
+                                    Ouvrir </a>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Craete chatbot modal -->
+    <div id="create-chatbot-modal" class="create-post is-story">
+        <div
+            class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
+
+            <div class="text-center py-3 border-b">
+                <h3 class="text-lg font-semibold"> Chat Bot </h3>
+                <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 right-2" type="button" uk-close
+                    uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
+            </div>
+            <div class="flex flex-1 items-start space-x-4 p-5">
+
+                <div class="flex-1">
+                    {% csrf_token %}
+                    <textarea id="Textarea"
+                        class="uk-textare text-black shadow-none focus:shadow-none text-base font-normal resize-none"
+                        rows="5" placeholder=""></textarea>
+                </div>
+
+            </div>
+
+
+            <div class="flex items-center w-full justify-between border-t p-3">
+
+                <select id="languageSelect" class="selectpicker mt-2 story">
+                    <option disabled selected>Choisir la langue</option>
+                    <option>Français</option>
+                    <option>Anglais</option>
+                    <option>Arabe</option>
+                </select>
+
+                <div class="flex space-x-2">
+                    <a id="speecharea" href="#"
+                        class="bg-red-100 flex font-medium h-9 items-center justify-center px-5 rounded-md text-red-600  hover:text-red-600">
+
+
+                        Ecoute</a>
+
+                    <a id="copyarea" href="#"
+                        class="bg-red-100 flex font-medium h-9 items-center justify-center px-5 rounded-md text-red-600  hover:text-red-600">
+
+                        copie</a>
+                    <a id="traduction" href="#"
+                        class="bg-blue-600 flex h-9 items-center justify-center rounded-md hover:text-white text-white px-5 font-medium">
+                        Traduire </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript
+    ================================================== -->
+    <script src="{% static 'assets/js/quote.js' %}"></script>
+    <script src="{% static 'assets/js/speech-assistant.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+</body>
+
+</html>
